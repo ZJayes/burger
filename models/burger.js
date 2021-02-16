@@ -27,4 +27,4 @@ const burger = {
 
 
 
-module.exports = burger
+module.exports = burger;
