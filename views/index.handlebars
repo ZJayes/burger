@@ -1,32 +1,42 @@
-<section class="container">
-<h1>Eat the Burger!</h1>
+<h1>Eat-Da-Burger!</h1>
 
-<div id = "buttonHolder">
-<input id='inpt' type="text"></input>
-<button type="submit" id='btn'>Submit</button>
-</div>
+<h2 class="waiting">Burgers waiting to be devoured</h2>
 
-
-{{#each burger}}
-{{#if devoured}}
-<ul style="list-style-type: none;
-">
-    <li style="text-align: right; text-decoration:line-through">
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    
+    <li>
         {{burger_name}}
-    </li> 
 
-</ul>       
-
-{{else}}
-<ul >
-<li>
-    {{burger_name}}    
-    <button class="devour" id="{{id}}">Devour it!</button>      
-</li>
+        <button class="devour-burger" data-id="{{id}}">
+            I'M STARVING!
+        </button>
+    </li>
+    {{/unless}}
+    {{/each}}
 </ul>
-{{/if}}
-{{/each}}
 
+<h2 class="delicious">Burgers devoured</h2>
 
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
 
-</section>
+        {{burger_name}}
+
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="burger_name" name="name">
+
+        <button type="submit">Add Burger</button>
+</form>
