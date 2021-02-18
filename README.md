@@ -32,5 +32,5 @@ The server.js links all of the routes and files together giving the server acces
 
 ## Portfolio
 
-Here is the link to my portfolio:
+Here is the link to my portfolio: https://zjayes.github.io/
 

@@ -1,4 +1,32 @@
-<h1>Devour the Burger!</h1>
+<section class="container">
+<h1>Eat the Burger!</h1>
 
-//need to get tutor to create layout using handlebars...confused when it comes to the {{}}
-//tutor session set up for friday 2/19/21
+<div id = "buttonHolder">
+<input id='inpt' type="text"></input>
+<button type="submit" id='btn'>Submit</button>
+</div>
+
+
+{{#each burger}}
+{{#if devoured}}
+<ul style="list-style-type: none;
+">
+    <li style="text-align: right; text-decoration:line-through">
+        {{burger_name}}
+    </li> 
+
+</ul>       
+
+{{else}}
+<ul >
+<li>
+    {{burger_name}}    
+    <button class="devour" id="{{id}}">Devour it!</button>      
+</li>
+</ul>
+{{/if}}
+{{/each}}
+
+
+
+</section>
